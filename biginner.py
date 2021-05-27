@@ -189,3 +189,18 @@ print()
 # this splits the string into substrings if it finds instances of the separator
 word = 'For the Lord, our God, wont let us down, he will bless us all'
 print(word.split(','))
+
+# to combine strings and numbers we use the format() method , we place the {} placeholder where we want the numbers to appear
+age = 36
+txt= 'I am {} years old'
+print(txt.format(age))
+print()
+
+# the format method take multiple arguments
+quantity = 8
+item_no = 167
+price = 14.99
+info = 'I want {} wrist watch with item no {} of {} pounds'
+print(info.format(quantity, item_no, price))
+
+print()
