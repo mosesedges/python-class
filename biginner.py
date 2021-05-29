@@ -5,9 +5,9 @@ name = 'Sally'
 
 # variables can change types even after been set to a value
 x = 'Sally'
-print(x)  # the result is sally. changed from x to sally.
+print(x)  # the result is sally. changed from 4 to sally.
 
-# casting . this is how to simply specify data type
+# casting . this is how to simply change data type
 x = str(5)
 y = int(7)
 z = float(3)
@@ -23,7 +23,7 @@ A = 'Jonny'
 
 print(A, a)
 
-# variable name must start with an alphabet or an _underscore no a space or hyphen is not allowed in variable name
+# variable name must start with an alphabet or an _underscore  a space or hyphen is not allowed in variable name
 myName = 'Lucas'
 _myName = 'Lucas'
 my_Name = 'Lucas'
@@ -58,7 +58,8 @@ def start():
 
 
 start()
-print('when you click start if ' + go)
+
+print('when you click start it ' + go)
 
 # to change a global variable (decleared out side any function) inside a function use the global keyword
 j = 'people'
@@ -70,6 +71,7 @@ def party():
 
 
 party()
+
 print('The party is for the Entire ' + j)
 
 # DATA TYPES IN PYTHON
@@ -100,13 +102,14 @@ x = bytearray(5)	bytearray
 x = memoryview(bytes(5))	memoryview	
 
 """
-# complex numbers are written with a jas the imaginary part, complet numbers cant be converted into other numbers
+# complex numbers are written with a j as the imaginary part, complex numbers cant be converted into other numbers
 x = 3+5j
 y = 7j
 z = 5j
 print(type(x), type(y), type(z))
 
 # to get a random number we have to import a built inn module called random
+
 # this will display a single random number between 1 to 8
 print(random.randrange(1, 8))
 
@@ -121,7 +124,7 @@ print(story,)
 
 # square brackets can be used to get the position of a character in a string
 
-greet = 'Hello World '
+greet = 'Hello World'
 print(greet[1])
 
 # strings as Arrays can be looped through
@@ -147,10 +150,10 @@ print('life' not in txt)  # this will return a bool(True or False)
 if 'love' not in txt:
     print('Yes, love is  not present ')
 
-# To slice a string we use the syntax that gets a positiona of a sting and a colon
+# To slice a string we use the syntax that gets a positiona of a string and a colon
 greet = 'Hello world!'
-# with 0 indexing this will slice from the 3rd letter to the 5th letter
-print(greet[2:5])
+# with 0 indexing this will slice from the 2nd letter to the 7th letter
+print(greet[2:8])
 # an empty space before the colon will start the slice from the beginning
 print(greet[:5])
 # an empty space after the colon will end the slice at the end
@@ -162,37 +165,37 @@ print()
 
 # SOME STRING METHODS
 # .upper()  this turns the string to uppercase
-word = 'For the Lord, our God, wont let us down, he will bless us all'
+word = 'For the Lord, our God, won\'t let us down, he will bless us all'
 print(word.upper())
 
 print()
 
 # .lower()  this turns the string to lowercase
-word = 'For the Lord, our God, wont let us down, he will bless us all'
+word = 'For the Lord, our God, won\'t let us down, he will bless us all'
 print(word.lower())
 
 print()
 
 # .replace()  this replaces an individual character, phrase or the entire string
-word = 'For the Lord, our God, wont let us down, he will bless us all'
+word = 'For the Lord, our God, won\'t let us down, he will bless us all'
 print(word.replace('Lord', 'Almighty'))
 
 print()
 
 # .strip()  this removes any white space in the beginning or end of the string
-word = '   For the Lord, our God, wont let us down, he will bless us all     '
+word = '   For the Lord, our God, won\'t let us down, he will bless us all     '
 print(word.strip())
 
 print()
 
 # .split()  this method returns a list where the text between the specified separator becomes the list items
 # this splits the string into substrings if it finds instances of the separator
-word = 'For the Lord, our God, wont let us down, he will bless us all'
+word = 'For the Lord, our God, won\'t let us down, he will bless us all'
 print(word.split(','))
 
 # to combine strings and numbers we use the format() method , we place the {} placeholder where we want the numbers to appear
 age = 36
-txt= 'I am {} years old'
+txt = 'I am {} years old'
 print(txt.format(age))
 print()
 
@@ -204,3 +207,158 @@ info = 'I want {} wrist watch with item no {} of {} pounds'
 print(info.format(quantity, item_no, price))
 
 print()
+
+# The format method can also take in 0 index numbers {0}to help affix each number apprioprately
+
+weight = 80
+height = 6.2
+age = 14
+info = 'He is aged {2} with height of {1} and weighs {0} pounds'
+# by inputting the right index the variable can be formatted from haphazardly or serially
+print(info.format(weight, height, age))
+print()
+# A backslash is an excape character in python, simply add the backslash before the escape character
+print(' We are the so called  \'Gunners\'')
+
+print()
+print('Welcome \'home\'')  # \'	Single Quote
+print('Welcome home \\')  # \\	Backslash
+print('Welcome\n home')  # \n	New Line
+print('Welcome\r home')  # \r	Carriage Return
+print('Welcome \thome')  # \t	Tab
+
+# BOOL
+# Almost any value is evaluated to True if it has some sort of content.
+
+# Any string is True, except empty strings.
+
+# Any number is True, except 0.
+
+# Any list, tuple, set, and dictionary are True, except empty ones.
+
+# OPERATORS
+# arithmetic operator are as expected just like in any other language
+
+# +	Addition	x + y
+# -	Subtraction	x - y
+# *	Multiplication	x * y
+# /	Division	x / y
+# %	Modulus	x % y
+# **	Exponentiation	x ** y
+# //	Floor division	x // y
+
+# Assignment operators  are also as expected except the the ++ for incrementing one does not exist in python
+
+# =	x = 5	x = 5
+# +=	x += 3	x = x + 3
+# -=	x -= 3	x = x - 3
+# *=	x *= 3	x = x * 3
+# /=	x /= 3	x = x / 3
+# %=	x %= 3	x = x % 3
+# //=	x //= 3	x = x // 3
+# **=	x **= 3	x = x ** 3
+# &=	x &= 3	x = x & 3
+# |=	x |= 3	x = x | 3
+# ^=	x ^= 3	x = x ^ 3
+# >>=	x >>= 3	x = x >> 3
+# <<=	x <<= 3	x = x << 3
+
+#  Comparison operators
+
+# ==	Equal	x == y
+# !=	Not equal	x != y
+# >	Greater than	x > y
+# <	Less than	x < y
+# >=	Greater than or equal to	x >= y
+# <=	Less than or equal to	x <= y
+
+# Logical Operator
+
+# and 	Returns True if both statements are true	x < 5 and  x < 10
+# or	Returns True if one of the statements is true	x < 5 or x < 4
+# not	Reverse the result, returns False if the result is true	not(x < 5 and x < 10)
+
+# Identity operators
+
+# Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:
+# is 	Returns True if both variables are the same object	x is y
+# is not	Returns True if both variables are not the same object	x is not y
+
+# Membership Operators
+
+# Membership operators are used to test if a sequence is presented in an object:
+# in 	Returns True if a sequence with the specified value is present in the object	x in y
+# not in	Returns True if a sequence with the specified value is not present in the object	x not in y
+
+# LISTS
+# List items are ordered, changeable, and allow duplicate values.
+this_list = ['apple', 'banana', 'cherry', 'apple']
+print(this_list)
+print(len(this_list))
+
+# the list constructor can be used to create a list
+people = list(('Kevin', 'Justice', 'Aiden', 'Alex', 'Alodia'))
+print(people)
+
+# Python Collections (Arrays)
+# There are four collection data types in the Python programming language:
+
+# List is a collection which is ordered and changeable. Allows duplicate members.
+# Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+# Set is a collection which is unordered and un-indexed. No duplicate members.
+# Dictionary is a collection which is ordered* and changeable. No duplicate members.
+
+# index accessment of list item
+print(people[2:6])
+print(people[-4:-1])
+
+if 'Alodia' in people:
+    print('Present Sir')
+
+# CHANGE LIST
+people[0] = 'Emma'
+print(people)
+
+people[1:3] = ['Richard', 'Lizzy']
+print(people)
+
+people[1:3] = ['Richard', 'Lizzy', 'Mike']
+print(people)
+
+people[1:3] = ['Nain']
+print(people)
+
+people.insert(2, 'Sandy')
+print(people)
+
+# ADD LIST ITEMS
+#  use the append() method to append an element to a list .
+people.append('Jacky')
+print(people)
+# to append a list to another list use the extend() method.
+
+Members = ['Angel', 'Sarah', 'Nicole', 'Rhoda']
+people.extend(Members)
+print(people)
+
+# The extend() method does not have to append lists, you can add any iterable object (tuples, sets, dictionaries etc.)
+
+thistuple = ('machine', 'moto')
+Members.extend(thistuple)
+print(Members)
+
+# REMOVE ITEMS
+
+# The remove() method removes the specified item.
+Members.remove('machine')
+print(Members)
+
+# The pop() method removes the specified index.
+
+Members.pop(2)
+people.pop()  # removes the last item
+
+# The del keyword also removes the specified index or the entire list:
+
+del Members[0]
+print(Members)
