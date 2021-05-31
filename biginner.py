@@ -355,10 +355,191 @@ print(Members)
 
 # The pop() method removes the specified index.
 
-Members.pop(2)
-people.pop()  # removes the last item
+Members.pop(1)
+print(Members)
+Members.pop()  # removes the last item
+print(Members)
 
 # The del keyword also removes the specified index or the entire list:
 
-del Members[0]
+del Members[2]
 print(Members)
+
+del Members
+# print(Members)
+
+# The clear() method empties the list.
+# The list still remains, but it has no content.
+
+# people.clear()
+# print(people)
+
+for x in people:
+    print(x)
+# print item by referring to their index
+print()
+for i in range(len(people)):
+    print(people[i])
+print()
+
+# print from item index 2 to 4
+for i in range(2, 5):
+    print(people[i])
+
+print()
+
+users = list(('angel', 'sarah', 'nicole', 'rhoda'))
+
+
+i = 0
+while i < len(users):
+    print(users[i])
+    i += 1
+
+    print()
+
+# List comprehension offers the shortest syntax for looping through lists
+
+[print(x) for x in people]  # shorthand for loop
+
+print()
+
+# normal looping through a list
+
+fruits = ['mango', 'banana', 'cherry', 'apple', 'kiwi', 'orange']
+
+newlist = ['watermelon']
+
+for x in fruits:
+    if 'a' in x:
+        newlist.append(x)
+        print(newlist)
+
+print()
+
+# comprehension of thesame loop
+# The return value is a new list, leaving the old list unchanged.
+
+# The condition is like a filter that only accepts the items that valuate to True.
+newlist = [x for x in fruits if 'a' in x]
+print(newlist)
+
+print()
+
+newUsers = [name for name in users if name != 'Rhoda']
+print(newUsers)  # a new list without Rhoda
+
+print()
+
+newUsers = [name for name in users]
+# a new list of thesame old data. prints out everything in the old list
+print(newUsers)
+
+print()
+
+numbers = [x for x in range(10)]
+print(numbers)  # result = an iteration of 0 - 9
+
+print()
+
+numbers = ['hey you' for x in range(10)]
+print(numbers)  # hey you 10 times
+
+print()
+
+girls = [x.upper() for x in users if 'a' in x]
+print(girls)  # a newlist of name with the alphabet a in it transformed to uppercase
+
+print()
+
+# return the item if is not nicole if it is nicole return KOSY
+freshGirls = [x.upper() if x != 'nicole' else 'KOSY' for x in users]
+
+print(freshGirls)
+
+print()
+
+
+# SORT LIST
+
+fruits = ['mango', 'banana', 'cherry', 'apple', 'kiwi', 'orange', 'pineapple']
+record = [100, 50, 65, 82, 23]
+
+#  the sort method sorts the array in accending order.
+
+fruits.sort()
+print(fruits)
+print()
+
+record.sort()
+print(record)
+print()
+
+# to reverse our sorted list we set reverse = true as an argument to the sort method
+
+fruits.sort(reverse=True)
+print(fruits)
+print()
+
+# we can also use the keyword (key=functionName) to set a function as our sort argument.
+
+
+def myfunc(n):
+    return abs(n - 90)
+
+
+record.sort(key=myfunc)
+print(record)
+print()
+
+# on default the sort method will sort uppercase before lowercase but we can overide this by using the str.lower as a key function.
+fruitsUp = ['mango', 'banana', 'cherry',
+            'apple', 'Kiwi', 'Orange', 'Pineapple']
+fruitsUp.sort()
+print(fruitsUp)
+print()
+
+fruitsUp.sort(key=str.lower)
+print(fruitsUp)
+print()
+
+# we can reverse an unsorted list
+
+fruitsUp.reverse()
+print(fruitsUp)
+print()
+
+# COPY LIST
+#  to copy a list we make use of the built in function copy() or list()
+
+newGirls = users.copy()
+print(newGirls)
+print()
+
+newFruits = list(fruits)
+print(newFruits)
+print()
+
+# JOIN LIST
+# to join a list we can use concatenation, append() or extend() methods
+
+fruitGirls = fruits + girls
+print(fruitGirls)
+print()
+
+for x in girls:
+    fruits.append(x)
+    print(fruits)
+print()
+
+girls.extend(newGirls)
+print(girls)
+
+# the count method checks how many of times an item appeared in a list while index show us the index of a particular item.
+x = girls.count('sarah')
+print(x)
+print()
+
+y = girls.index('rhoda')
+print(y)
+print()
