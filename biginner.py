@@ -287,8 +287,8 @@ print('Welcome \thome')  # \t	Tab
 # Membership Operators
 
 # Membership operators are used to test if a sequence is presented in an object:
-# in 	Returns True if a sequence with the specified value is present in the object	x in y
-# not in	Returns True if a sequence with the specified value is not present in the object	x not in y
+# in 	Returns True if a sequence with the specified value is present in the object x in y
+# not in	Returns True if a sequence with the specified value is not present in the object x not in y
 
 # LISTS
 # List items are ordered, changeable, and allow duplicate values.
@@ -407,6 +407,7 @@ print()
 # normal looping through a list
 
 fruits = ['mango', 'banana', 'cherry', 'apple', 'kiwi', 'orange']
+print(fruits)
 
 newlist = ['watermelon']
 
@@ -543,3 +544,270 @@ print()
 y = girls.index('rhoda')
 print(y)
 print()
+
+# ******** TUPLE ********
+
+# tuples are surrounded by circle bracket
+mytuple = ('jordan', 'morocco', 'zanzibar', 'morocco')
+
+#  a tuple accepts all primitive data types when a single item is in a tuple the a comma should be place after the closing quote to let the computer know it is a tuple
+
+ourtuple = ('London',)  # notice the comma after the london.
+
+# the tuple constrictor can be used to create a tuple just like in list
+
+ourtuple = tuple(('maldevis', 'casablanca', 'kigali', 'cairo'))
+
+print(len(ourtuple))
+print(ourtuple)
+print()
+
+
+# UPDATE TUPLE
+# Once a tuple is created, you cannot change its values. Tuples are unchangeable, or immutable as it also is called.
+
+# the work around of this is to convert the tuple into a list mutate the data the convert it back to a tuple
+x = list(ourtuple)
+x.insert(2, 'ivori-coast')
+y = tuple(x)
+print(y)
+print()
+
+# you CANNOT  add or remove items in a tuple.
+
+# the del keyword can delete a tuple completely
+
+# when we set items to tuple or list we call it packing when we extract the values into variables we call it unpacking.
+
+(europe, morroco, cotedevoir, rwanda, egypt) = y
+print(europe, morroco, rwanda, egypt, cotedevoir)
+
+# where the variable is less than the items being unpacked adding an * asterike to a variable will unpack the remaining variable to it as a list
+
+(europe, morroco, *egypt) = y
+print(europe, morroco, egypt)
+print()
+
+# we can multiple the content of a list or tuple
+doubleOurTuple = ourtuple * 2
+print(doubleOurTuple)
+print()
+
+# the only two built in methods that work on tuples is count and index
+
+# ************ SET ****************
+
+# set are unordered, unindexed and unchangeable(but a new set item can be added)
+# they are written with curly brackets and do not allow duplicate values(duplicate values are ignored )
+#  a set accepts all datatypes like a list and also has a constructor set
+
+# morocco will appear only once.
+myset = set(('jordan', 'morocco', 'zanzibar', 'morocco'))
+print(myset)
+print()
+
+thisset = {True, 'monday', 23, 'year', 2002, }
+print(thisset, myset)
+print()
+
+# ACCESSING A SET
+# a set can't be accessed by index or value but can be looped through and check if an item exist
+
+for x in thisset:
+    print(x)
+print()
+
+travelset = [x for x in myset if 'o' in x]
+print(travelset)
+print()
+
+# ADDING A SET
+# to add an item we use the add() method to add a set to another set we use the update() method . the update method can be used to add any iterable to a set
+
+thisset.add('june')
+print(thisset)
+print()
+
+thisset.update(myset)
+print(thisset)
+print()
+
+# REMOVING AN ITEM FROM A SET
+
+# to remove an item we use the remove() method or the discard method , the pop() method will remove an item randomly
+
+thisset.remove('june')
+print(thisset)
+print()
+
+thisset.discard('zanzibar')
+print(thisset)
+print()
+
+thisset.pop()
+print(thisset)
+print()
+
+p = thisset.pop()
+print(p)  # the return value of what was popped
+
+#  the clear() method will empty the set while the del keyword will delete the entire set
+
+# thisset.clear()
+# print(thisset) # an empty set
+
+# del thisset
+
+# JOINING A SET
+
+# to join a set we use a the union() and update() methods, both methods exclude duplicates
+
+boys = {'ron', 'jon', 'dan'}
+girls = {'may', 'kay', 'zoe'}
+
+calendar = boys.union(girls)
+print(calendar)  # this returns a newset containing items from both set
+print()
+
+boys.update(girls)
+print(boys)  # inserts one set into another
+print()
+
+# intersection_update() method keeps only items in present in both set
+boys = {'ron', 'jon', 'dan', 'kay'}
+girls = {'may', 'kay', 'zoe', 'lily'}
+
+boys.intersection_update(girls)
+print(boys)
+print()
+
+
+# intersection() method returns a new set of items preset in both set
+boys = {'ron', 'jon', 'dan', 'kay'}
+girls = {'may', 'kay', 'zoe', 'lily'}
+
+pupils = boys.intersection(girls)
+print(pupils)
+print()
+
+# The symmetric_difference_update() method will keep only the elements that are NOT present in both sets.
+
+# The symmetric_difference() method will return a new set, that contains only the elements that are NOT present in both sets.
+
+# other set methods *****
+# isdisjoint()	Returns whether two sets have a intersection or not
+# issubset()	Returns whether another set contains this set or not
+# issuperset()	Returns whether this set contains another set or not
+# difference()	Returns a set containing the difference between two or more sets
+# difference_update()	Removes the items in this set that are also included in another, specified set
+
+# *********** DICTIONARIES************
+
+# dict is changable ordered and does not  allow duplicate store data in key value pairs
+thisdict = {
+    'brand': 'Ford',
+    'model': 'mustang',
+    'year': '1964'
+}
+
+# dict can be referred to using the key name
+print(thisdict['brand'])
+print()
+
+# There is also a method called get() that will give you the same result:
+
+x = thisdict.get('model')
+print(x)
+print()
+
+# duplicate values will overide existing values
+thisdict = {
+    'brand': 'Ford',
+    'model': 'mustang',
+    'year': '1964',
+    'year': '2021'
+}
+
+print(thisdict)
+print()
+
+# dict accept strings, int , bool and list data types
+thisdict = {
+    'brand': 'Ford',
+    'model': 'mustang',
+    'year': '2020',
+    'price': 'unknown',
+    'others': ['dodge', 'maserati', 'porsche']
+}
+
+print(thisdict)
+print()
+
+# The keys() method will return a list of all the keys in the dictionary.
+key = thisdict.keys()
+print(key)
+print()
+
+
+# The values() method will return a list of all the values in the dictionary.
+# when a change is made the values get updated too, this can also be used to loop through the values
+value = thisdict.values()
+for x in thisdict.values():
+    print(x)
+print()
+print(value)
+print()
+
+# The items() method will return each item in a dictionary, as tuples in a list.
+# when a change is made the items get updated too
+
+item = thisdict.items()
+print(item)
+print()
+
+# To determine if a specified key is present in a dictionary use the in keyword:
+
+if 'price' in thisdict:
+    print('yes price is a key in thisdict ')
+    print()
+
+#  two ways to update a dict if the keys dont exist in the dict they will be added as new keys and values so this can an addition method too
+thisdict['price'] = '$ 12,000'
+thisdict.update({'year': 2021})
+
+print(thisdict)
+print()
+
+# thisdict.pop('brand')  # removes the item which key serve as her argument
+# thisdict.popitem()  # removes the he last item in the dict
+# del thisdict['price']  # deletes the item with the specific key
+# thisdict.clear()  # empties the dict
+# print(thisdict)
+
+#  to print all values one by one
+
+for y in thisdict:
+    print(thisdict[y])
+print()
+
+for y in thisdict.values():
+    print(y)
+print()
+
+for y in thisdict.keys():
+    print(y)
+print()
+
+for y, z in thisdict.items():
+    print(y, z)
+print()
+
+# to copy a dictionary dict1 = dict2  won't work  the two possible methods are copy() and dict() construction
+copieddict = thisdict.copy()
+new_dict = dict(thisdict)
+new_dict['color'] = 'gray'
+print(new_dict)
+print(thisdict)
+
+
+# pass statement is used on if, functions and constructor because you can't leave empty m
