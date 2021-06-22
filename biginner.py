@@ -808,6 +808,56 @@ new_dict = dict(thisdict)
 new_dict['color'] = 'gray'
 print(new_dict)
 print(thisdict)
+print()
+
+# *********** IF ELIF ELSE **********
+
+# pass statement is used on if, functions and constructor because you can't leave  them empty
+
+# short if statement
+a = 2
+b = 7
+print('A') if a > b else print('B')
+
+print('A') if a < b else print('=') if a == b else print('C')
 
 
-# pass statement is used on if, functions and constructor because you can't leave empty m
+# *********** LOOPS **********
+
+
+i = 1
+
+while i < 6:
+    print(i)
+    if i > 3:
+        break  # the break statement stops the iteration
+    i += 1
+
+
+while i < 6:
+    i += 1
+    print(i)
+    if i == 3:
+        # the continue statement stops the current iteration and continue with the next.
+        continue
+    print(i)
+
+    for x in range(8):
+        print(x)
+    else:
+        print('finally finished')
+
+
+for name in girls:
+    if 'r' in name or 'a' in name:
+        print('present')
+    elif 'o' in name and 'a' in name:
+        print('i am here')
+    else:
+        print('none')
+
+
+# *********** FUNCTIONS **********
+
+def cool(temp, whether, power):
+    if temp < 8 and whether == 'dry':
